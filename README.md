@@ -4,6 +4,8 @@ A fictional vegetarian restaurant and café in Portland, Oregon. A portfolio web
 
 **Live site:** https://root-and-ritual-sooty.vercel.app
 
+**Source repository:** https://github.com/kreatorrdev/root-and-ritual (private)
+
 **Local preview:** http://127.0.0.1:3000
 
 Published to Vercel on October 19, 2026. All venue details, dishes, prices, opening hours and photographs are illustrative. The reservation form is a non-submitting demo.
@@ -82,9 +84,11 @@ All project documentation is in English:
 - [Case study](docs/CASE_STUDY.md): design decisions, implementation and validation.
 - [Assets and licenses](docs/ASSETS.md): image generation prompts, fonts and attribution.
 
-## Vercel deployment
+## GitHub and Vercel deployment
 
-The site can be deployed directly from this folder without creating a GitHub repository:
+The GitHub repository is connected to the existing Vercel project. The production branch is `main`; pushing updates to that branch triggers a Vercel deployment. The live URL remains https://root-and-ritual-sooty.vercel.app.
+
+For a manual deployment from a new checkout:
 
 ```sh
 npx vercel login
@@ -96,4 +100,4 @@ Use the Next.js preset and keep `RESERVATION_FORM_ENDPOINT` unset for the portfo
 
 The first production deployment returned `READY`. Anonymous requests to the page and optimized image returned HTTP 200, a valid sample reservation returned HTTP 200 with explicit `demo` status, and the temporary review helper returned HTTP 404. Browser review confirmed the vegan filter, complete images and the production domain in Open Graph metadata.
 
-GitHub automation can be connected later. No public repository, paid plan, custom domain or form-delivery destination has been created.
+The repository contains the application, generated assets, English documentation and portfolio screenshots. Local environment files, Vercel credentials, dependencies, temporary files and build output are excluded. No paid plan, custom domain or form-delivery destination has been created.

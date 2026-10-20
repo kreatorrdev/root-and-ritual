@@ -56,4 +56,4 @@ The production images were generated specifically for this fictional concept. Th
 
 ## Delivery status
 
-The website is published on Vercel. The local build, automated checks and browser review have passed, and the live menu, images, metadata and demo reservation response have been verified. GitHub publication and its Vercel integration are being prepared. Real reservation delivery is intentionally unconfigured.
+The website is published on Vercel, with source stored in the private [GitHub repository](https://github.com/kreatorrdev/root-and-ritual). The repository is connected to the existing Vercel project for deployment from `main`. The local build, automated checks and browser review have passed, and the live menu, images, metadata and demo reservation response have been verified. Real reservation delivery is intentionally unconfigured.

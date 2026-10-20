@@ -2,7 +2,7 @@
 
 > **Project type:** Demo portfolio website (fictional restaurant)  
 > **Positioning:** Restaurant websites, responsive frontend, interactive menus and reservation requests  
-> **Status:** Published and verified on Vercel — GitHub repository pending  
+> **Status:** Published on Vercel; private GitHub repository connected  
 > **UI language:** English  
 > **Documentation language:** English
 
@@ -64,7 +64,7 @@ Build a polished, mobile-first website for a **100% vegetarian restaurant** with
 
 ## 5. Implementation roadmap
 
-Check off tasks in order. **Status: 17/19**.
+**Status: 18/19 complete.** R13 remains intentionally unconfigured for this portfolio demo.
 
 ### Phase A — Preparation
 
@@ -94,7 +94,7 @@ Check off tasks in order. **Status: 17/19**.
 - [x] **R15 — Responsive/accessibility:** keyboard navigation, labels, focus, contrast, screen-reader descriptions. _(Tailwind, browser testing)_
 - [x] **R16 — Performance/SEO:** optimize images/fonts, metadata, Open Graph, semantic headings. _(Next.js)_
 - [x] **R17 — Build/testing:** lint, type/build check, test menu filters, gallery and failed form submission. _(npm scripts / manual QA)_
-- [ ] **R18 — Publish:** Vercel production deployment and live checks complete at https://root-and-ritual-sooty.vercel.app; GitHub repository remains a later step. _(GitHub, Vercel)_
+- [x] **R18 — Publish:** source uploaded to the private https://github.com/kreatorrdev/root-and-ritual repository and connected to the existing Vercel project. Live site: https://root-and-ritual-sooty.vercel.app. _(GitHub, Vercel)_
 - [x] **R19 — Portfolio:** screenshot set, `README.md`, tech stack, demo disclaimer and case study. _(Markdown / screenshots)_
 
 ## 6. Project structure
@@ -127,7 +127,7 @@ root-and-ritual/
 - [x] Reservation form validates inputs and reports actual submission status honestly.
 - [x] Demo information (reviews, fictional venue details, prices) is labeled appropriately.
 - [x] `npm run lint` (if configured) and `npm run build` pass.
-- [ ] GitHub code, live Vercel demo, screenshots and README are ready.
+- [x] GitHub code, live Vercel demo, screenshots and English README are ready.
 
 ## 8. Nice-to-have after MVP (not required)
 
@@ -135,17 +135,17 @@ root-and-ritual/
 - Multilingual site, seasonal menu and "today's specials" controls.
 - Real reservation/calendar backend with verified availability — only in a separate later phase.
 
-## 9. Remaining release work
+## 9. Future work
 
-Publish the reviewed source and English documentation to GitHub, connect the repository to the existing Vercel project and verify the integration. Real reservation delivery remains an optional future integration and is not required to browse or test the portfolio demo.
+Real reservation delivery remains an optional future integration and is not required to browse or test the portfolio demo. Future updates can be published through the connected GitHub repository.
 
 ## 10. Project decisions
 
 - Location: Portland, Oregon, United States; an illustrative concept location.
 - Currency: USD.
-- Delivery: local development followed by Vercel publication. GitHub publication and automatic Vercel deployment are being prepared.
+- Delivery: local development, Vercel publication and a private GitHub repository connected to the same Vercel project.
 - The final dark visual direction is recorded in `DESIGN_BRIEF.md`.
 - Four restaurant website references informed the dark visual direction, layered food assembly, scroll-driven preparation and menu reveal.
 - Website copy and project documentation are in English.
-- Local implementation, generated assets, tests, screenshots, README and case study are complete. R13 remains in honest demo mode. Vercel production publication and live verification are complete; R18 remains partly open for GitHub.
+- Local implementation, generated assets, tests, screenshots, English documentation, GitHub publication and Vercel integration are complete. R13 remains in explicit demo mode.
 - Production URL: https://root-and-ritual-sooty.vercel.app (published October 19, 2026).

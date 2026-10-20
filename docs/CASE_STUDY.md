@@ -34,6 +34,6 @@ With delivery unconfigured, the result explicitly says that the request was not 
 
 ## Validation and release status
 
-The project includes linting, TypeScript checks, automated recipe/filter and reservation-validation tests, an optimized production build, local endpoint error-case checks and manual browser review. At the owner's request, it was published directly to Vercel on October 19, 2026: https://root-and-ritual-sooty.vercel.app. Live review confirmed menu filtering, successful image loading, production-domain social metadata and the explicitly non-submitting demo reservation response. GitHub publication remains a later step.
+The project includes linting, TypeScript checks, automated recipe/filter and reservation-validation tests, an optimized production build, local endpoint error-case checks and manual browser review. It was published to Vercel on October 19, 2026: https://root-and-ritual-sooty.vercel.app. Live review confirmed menu filtering, successful image loading, production-domain social metadata and the explicitly non-submitting demo reservation response. The source and English documentation are stored in the private [GitHub repository](https://github.com/kreatorrdev/root-and-ritual), which is connected to the existing Vercel project for deployments from `main`.
 
 All restaurant details, photography and prices are illustrative. This case study describes a development exercise, not a live restaurant or a measured commercial result.
