@@ -1,0 +1,359 @@
+.section {
+  height: 280svh;
+  min-height: 1600px;
+  overflow: clip;
+  isolation: isolate;
+  border-bottom: 1px solid var(--line);
+}
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 0;
+  padding-block: 110px 45px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+}
+.copy {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+.copy h2 {
+  font-size: clamp(34px, 3.7vw, 52px);
+  margin-block: 20px;
+}
+.intro {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 18px;
+}
+.step {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+  color: #8f9987;
+  transition: color 400ms ease;
+}
+.number {
+  color: #839775;
+  font-size: 9px;
+}
+.step h3 {
+  font-size: 13px;
+  font-weight: 550;
+}
+.step p {
+  font-size: 10px;
+  line-height: 1.7;
+  color: #a8b39b;
+  opacity: 0;
+  transform: translateY(3px);
+  transition:
+    opacity 400ms ease,
+    transform 400ms ease;
+}
+.step[aria-current="step"] {
+  color: var(--lime);
+}
+.step[aria-current="step"] p {
+  opacity: 1;
+  transform: translateY(0);
+}
+.invitation {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 7px;
+  color: #a7b594;
+  letter-spacing: 1.1px;
+}
+.scene {
+  width: 100%;
+  min-width: 0;
+  align-self: center;
+}
+.canvas {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: clip;
+  isolation: isolate;
+}
+.canvas :global(.food-art-scroll) {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+}
+.canvas :global(.empty-plate) {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.canvas :global(.ingredient-piece) {
+  will-change: transform, left, top;
+}
+.board {
+  position: absolute;
+  inset: 13% 10%;
+  z-index: 2;
+  border-radius: 20px;
+  background:
+    repeating-linear-gradient(1deg, #50382424 0 2px, #24150d18 2px 3px, transparent 3px 9px),
+    linear-gradient(100deg, #3f2c1d, #725335 28%, #61442d 70%, #45321f);
+  box-shadow:
+    8px 18px 22px #0005,
+    inset 0 0 2px #d5b69165;
+  transform: rotate(-5deg);
+  will-change: transform, opacity;
+}
+.board::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid #22170f60;
+  border-radius: 13px;
+}
+.board::after {
+  content: "";
+  position: absolute;
+  left: 4%;
+  top: 44%;
+  height: 13%;
+  width: 2.8%;
+  background: #172016;
+  border-radius: 20px;
+  box-shadow: inset 1px 0 2px #000;
+}
+.knife {
+  position: absolute;
+  left: 42%;
+  top: 37%;
+  width: 3.3%;
+  height: 27%;
+  opacity: 0;
+  z-index: 6;
+  filter: drop-shadow(3px 5px 3px #0006);
+  transform-origin: 50% 65%;
+}
+.blade {
+  display: block;
+  height: 68%;
+  background: linear-gradient(90deg, #78827b, #e6ece0 20%, #a5afa6 36%, #d0d8ca 83%, #858e80);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 28%, 22% 8%);
+}
+.handle {
+  display: block;
+  height: 32%;
+  width: 80%;
+  margin-left: 12%;
+  border-radius: 0 0 4px 4px;
+  background: linear-gradient(90deg, #141812, #35382c, #1c2118);
+  border: 1px solid #77856860;
+}
+.heat {
+  position: absolute;
+  z-index: 3;
+  inset: 17% 19%;
+  opacity: 0;
+  background: radial-gradient(ellipse, #d9984690, #aa5c2025 47%, transparent 72%);
+  filter: blur(20px);
+  border-radius: 50%;
+}
+.captions {
+  position: relative;
+  height: 22px;
+  margin-top: 12px;
+  text-align: center;
+}
+.captions span {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  font-size: 8px;
+  letter-spacing: 1.6px;
+  color: #bdcfa6;
+}
+.captions span:first-child {
+  opacity: 1;
+}
+.progress {
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #ffffff16;
+}
+.progress span {
+  display: block;
+  height: 100%;
+  width: var(--ritual-progress, 0%);
+  background: var(--lime);
+}
+@media (max-width: 1000px) {
+  .sticky {
+    gap: 30px;
+    padding-top: 105px;
+  }
+  .copy h2 {
+    font-size: 36px;
+    letter-spacing: -1.7px;
+  }
+  .intro {
+    font-size: 11px;
+  }
+  .step {
+    gap: 12px;
+  }
+  .step p {
+    font-size: 9px;
+  }
+  .invitation {
+    font-size: 6px;
+    letter-spacing: 0.7px;
+  }
+  .captions span {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+}
+@media (max-width: 760px) {
+  .section {
+    height: 280svh;
+    min-height: 1500px;
+  }
+  .sticky {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding-block: 90px 25px;
+    gap: 10px;
+  }
+  .copy h2 {
+    font-size: 32px;
+    line-height: 1.1;
+    margin-block: 12px;
+  }
+  .copy :global(.eyebrow) {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+  .intro,
+  .invitation {
+    display: none;
+  }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-block: 15px 3px;
+  }
+  .step {
+    flex-direction: column;
+    align-items: start;
+    gap: 3px;
+    padding-block: 7px;
+    border-bottom: 0;
+    border-top: 1px solid var(--line);
+  }
+  .step h3 {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+  .step p {
+    display: none;
+  }
+  .number {
+    font-size: 7px;
+  }
+  .scene {
+    width: min(100%, calc(100svh - 325px), 430px);
+    margin-inline: auto;
+  }
+  .captions {
+    margin-top: 6px;
+    height: 20px;
+  }
+  .captions span {
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+  .progress {
+    bottom: 18px;
+  }
+}
+@media (max-width: 360px) {
+  .copy h2 {
+    font-size: 29px;
+  }
+  .steps {
+    gap: 7px;
+  }
+  .step h3 {
+    font-size: 9px;
+  }
+}
+@media (min-width: 761px) and (max-height: 660px) {
+  .sticky {
+    padding-block: 100px 35px;
+    gap: 35px;
+  }
+  .copy h2 {
+    font-size: 34px;
+    margin-block: 13px;
+  }
+  .intro {
+    font-size: 10px;
+  }
+  .steps {
+    margin-block: 15px;
+  }
+  .step {
+    padding-block: 6px;
+  }
+  .step h3 {
+    font-size: 12px;
+  }
+  .step p {
+    font-size: 9px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section {
+    height: auto;
+    min-height: 0;
+  }
+  .sticky {
+    position: relative;
+    height: auto;
+    min-height: 0;
+    padding-block: 90px;
+  }
+  .scene {
+    width: 100%;
+    max-width: 430px;
+  }
+  .step p {
+    opacity: 1;
+    transform: none;
+  }
+  .progress,
+  .invitation {
+    display: none;
+  }
+  .canvas :global(.ingredient-piece),
+  .canvas :global(.empty-plate),
+  .board {
+    will-change: auto;
+  }
+}

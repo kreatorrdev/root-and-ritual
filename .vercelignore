@@ -1,0 +1,12 @@
+node_modules/
+.next/
+.git/
+.vercel/
+tmp/
+coverage/
+docs/screenshots/
+*.log
+*.tsbuildinfo
+.env*
+!.env.example
+public/_review.html
