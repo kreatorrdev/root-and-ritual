@@ -3,6 +3,7 @@
 import { ArrowDown, ArrowUpRight, MoveDown, RotateCcw } from "lucide-react";
 import { useRef, useState, type CSSProperties } from "react";
 import { FoodArt, Sprite } from "./food-art";
+import { BotanicalArt } from "./botanical-art";
 
 export function Hero() {
   const [replay, setReplay] = useState(0);
@@ -10,6 +11,7 @@ export function Hero() {
   return (
     <section id="home" className="hero stone-surface">
       <div className="hero-glow" />
+      <BotanicalArt className="botanical-art-hero" />
       <div className="hero-main container">
         <div className="hero-copy">
           <div className="eyebrow">

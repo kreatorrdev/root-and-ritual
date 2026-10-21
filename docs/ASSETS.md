@@ -43,6 +43,14 @@ The user's four website screenshots were visual references for dark backgrounds,
 
 ## Fonts and icons
 
+The current Kitchen Remedy-inspired typography uses these self-hosted variable Latin fonts, distributed by Fontsource v5.3.0 under the SIL Open Font License:
+
+- Wix Madefor Display: `public/fonts/wix-madefor-display-latin.woff2`; license in `public/fonts/OFL-Wix-Madefor-Display.txt`. [Fontsource details](https://fontsource.org/fonts/wix-madefor-display/about).
+- Hanken Grotesk: `public/fonts/hanken-grotesk-latin.woff2`; license in `public/fonts/OFL-Hanken-Grotesk.txt`. [Fontsource details](https://fontsource.org/fonts/hanken-grotesk/about).
+- The botanical sprig is an original code-native SVG in `src/components/botanical-art.tsx`; no artwork was copied from the reference website.
+
+The original Manrope and Cormorant files below are retained with their licenses for the earlier design screenshots. They are no longer loaded by the live page.
+
 - Manrope variable Latin WOFF2: `public/fonts/manrope-latin.woff2`; license notice in `public/fonts/OFL-Manrope.txt`.
 - Cormorant Garamond variable italic Latin WOFF2: `public/fonts/cormorant-italic-latin.woff2`; license notice in `public/fonts/OFL-Cormorant-Garamond.txt`.
 - Font files were downloaded from Fontsource's jsDelivr distribution and are self-hosted through `next/font/local`. The SIL Open Font License notices are included in full.

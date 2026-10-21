@@ -1,0 +1,598 @@
+/* Forest, mint and warm paper, inspired by the Kitchen Remedy reference. */
+body {
+  font-size: 16px;
+  font-weight: 400;
+}
+h1,
+h2,
+h3,
+.brand,
+.vegetarian-seal strong {
+  font-family: var(--font-display), Arial, sans-serif;
+}
+h1,
+h2 {
+  color: var(--lime);
+  font-weight: 650;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+h2 em,
+.hero h1 em,
+.brand-and,
+.story-signature em,
+.footer-top > p {
+  font-family: var(--font-display), Arial, sans-serif;
+  font-style: normal;
+  font-size: 1em;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+}
+h2 em,
+.hero h1 em {
+  color: inherit;
+}
+.stone-surface {
+  background-color: var(--bg);
+  background-image: none;
+}
+.hero-glow {
+  background: radial-gradient(ellipse, #75aa8330, transparent 67%);
+}
+.site-header.is-scrolled {
+  background: #024b34f2;
+}
+.mobile-nav {
+  background: var(--bg);
+  color: var(--lime);
+}
+.brand > span {
+  font-size: 28px;
+  letter-spacing: -0.06em;
+  font-weight: 650;
+}
+.brand-and {
+  color: var(--lime);
+}
+.brand-caption {
+  font-family: var(--font-body), Arial, sans-serif;
+  font-size: 7px;
+  color: var(--muted);
+  letter-spacing: 2.1px;
+}
+.desktop-nav a {
+  font-size: 14px;
+  color: var(--cream);
+}
+.eyebrow {
+  color: var(--copper);
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+.section-index {
+  color: var(--copper);
+}
+.hero h1 {
+  font-size: clamp(64px, 7.4vw, 106px);
+  font-weight: 650;
+  letter-spacing: -0.065em;
+  line-height: 1.02;
+  margin-block: 30px;
+}
+.hero-copy > p {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--cream);
+}
+.hero-actions {
+  gap: 24px;
+  margin-top: 34px;
+}
+.button {
+  background: transparent;
+  border: 1px solid #cbe5d8a6;
+  color: var(--lime);
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 11px 18px 11px 23px;
+  min-height: 54px;
+  gap: 22px;
+}
+.button > svg {
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  padding: 4px;
+  box-sizing: content-box;
+}
+.button:hover {
+  background: var(--lime);
+  color: var(--bg);
+  gap: 26px;
+}
+.button-small {
+  min-height: 44px;
+  padding: 8px 12px 8px 19px;
+  font-size: 13px;
+  gap: 15px;
+}
+.text-link {
+  font-size: 14px;
+  font-weight: 400;
+}
+.hero-actions > .text-link {
+  font-size: 14px;
+}
+.hero-caption {
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 1.5px;
+}
+.fine-line,
+.label-line {
+  background: var(--copper);
+}
+.vegetarian-seal {
+  background: var(--paper);
+  color: var(--bg);
+  box-shadow: none;
+}
+.hero-food-label {
+  color: var(--lime);
+}
+.hero-food-label small,
+.replay-button {
+  color: var(--muted);
+  font-size: 11px;
+}
+.hero-bottom {
+  color: var(--muted);
+  font-size: 9px;
+}
+.hero-bottom a {
+  color: var(--lime);
+}
+.hero-bottom-note {
+  color: var(--muted);
+  font-size: 8px !important;
+}
+.values-ribbon {
+  background: var(--paper);
+  color: var(--bg);
+  border-block: 1px solid #cbe5d82e;
+}
+.values-ribbon span {
+  font-size: 15px;
+  font-weight: 500;
+}
+.values-ribbon svg {
+  color: #91603c;
+}
+.botanical-art {
+  position: absolute;
+  pointer-events: none;
+  color: var(--lime);
+}
+.botanical-art-hero {
+  width: 350px;
+  left: -100px;
+  bottom: 88px;
+  opacity: 0.15;
+  transform: rotate(-16deg);
+}
+.section-heading > p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+.section-heading h2 {
+  margin-top: 22px;
+}
+.category-filters button,
+.dietary-filters button {
+  font-size: 13px;
+  min-height: 40px;
+  border-radius: 999px;
+  color: var(--muted);
+  padding: 10px 16px;
+}
+.category-filters button.active {
+  color: var(--bg);
+  background: var(--lime);
+  font-weight: 500;
+}
+.dietary-filters button {
+  font-size: 12px;
+}
+.dietary-filters button.active {
+  background: #cbe5d81c;
+  color: var(--lime);
+}
+.dish-card-image {
+  border-radius: 5px;
+  background: var(--surface);
+}
+.dish-featured {
+  color: var(--bg);
+  background: var(--paper);
+  font-size: 8px;
+  font-weight: 500;
+}
+.dish-title-row h3 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: var(--lime);
+}
+.dish-price {
+  font-size: 18px;
+  color: var(--lime);
+}
+.dish-card > p {
+  font-size: 14px;
+}
+.dish-tags {
+  gap: 13px;
+}
+.dish-tags > span {
+  font-size: 8px;
+  color: var(--muted);
+}
+.menu-bottom > p,
+.gallery-note {
+  font-size: 11px;
+  color: var(--muted);
+}
+.menu-bottom .button,
+.visit-layout .button {
+  font-size: 14px;
+}
+.story-copy h2,
+.reservation-copy h2,
+.visit-layout h2 {
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+}
+.story-layout {
+  gap: clamp(30px, 6vw, 85px);
+}
+.story-copy > p {
+  max-width: 410px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+.story-image {
+  border-radius: 4px;
+}
+.story-image > img,
+.gallery-button {
+  filter: brightness(1);
+}
+.story-image-caption {
+  background: #024b34de;
+  color: var(--paper);
+  font-size: 10px;
+}
+.story-signature span {
+  color: var(--muted);
+  font-size: 13px;
+}
+.story-signature em {
+  font-size: 15px;
+  color: var(--lime);
+}
+.gallery-overlay {
+  font-size: 13px;
+}
+.reservations-section {
+  background: #0a5140;
+  border-color: var(--line);
+}
+.reservation-copy > p {
+  font-size: 16px;
+  max-width: 340px;
+  color: var(--cream);
+}
+.reservation-copy .demo-caption {
+  font-size: 12px;
+  color: var(--muted);
+}
+.reservation-illustration {
+  color: var(--copper);
+}
+.reservation-illustration > span {
+  font-size: 10px;
+}
+.reservation-form {
+  background: var(--paper);
+  color: var(--bg);
+  border: none;
+  border-radius: 5px;
+  color-scheme: light;
+}
+.form-heading h3 {
+  font-size: 27px;
+  letter-spacing: -0.8px;
+  font-weight: 600;
+}
+.form-heading > p {
+  font-size: 14px;
+  color: #466552;
+}
+.field > label {
+  font-size: 13px;
+  color: var(--bg);
+}
+.field > label > span {
+  color: #526c5b;
+}
+.field > label > .optional {
+  font-size: 11px;
+  color: #526c5b;
+}
+.field input,
+.field select {
+  min-height: 48px;
+  background: #f8f4eb;
+  color: var(--bg);
+  border-color: #024b3438;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.field input::placeholder {
+  color: #526c5b;
+}
+.field input:hover,
+.field select:hover {
+  border-color: #024b3470;
+}
+.field-error {
+  color: #9a3628;
+  font-size: 12px;
+}
+.field input[aria-invalid="true"],
+.field select[aria-invalid="true"] {
+  border-color: #ad4735;
+}
+.form-notice {
+  color: #395e49;
+  font-size: 12px;
+}
+.privacy-note {
+  font-size: 11px;
+  color: #496451;
+}
+.reservation-form :focus-visible {
+  outline-color: var(--bg);
+}
+.reservation-form .button {
+  background: var(--bg);
+  border-color: var(--bg);
+  color: var(--cream);
+}
+.reservation-form .button:hover {
+  background: #0e6047;
+}
+.form-status {
+  background: #dfe8d8;
+  border-color: #53745e40;
+  color: #244b37;
+  font-size: 14px;
+}
+.form-status.status-error {
+  background: #f0ded4;
+  color: #8a3226;
+  border-color: #ad473550;
+}
+.visit-layout > .reveal > p {
+  font-size: 17px;
+}
+.visit-demo {
+  font-size: 12px;
+}
+.visit-details h3 {
+  color: var(--lime);
+  font-size: 15px;
+}
+.visit-details p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+.visit-details small {
+  color: var(--muted);
+  font-size: 11px;
+}
+.visit-contact {
+  color: var(--lime);
+  font-size: 12px;
+}
+.visit-details > div > svg {
+  color: var(--copper);
+}
+.site-footer {
+  background: #033f2e;
+}
+.footer-top > p {
+  font-size: 24px;
+  color: var(--lime);
+  font-weight: 500;
+}
+.footer-bottom {
+  font-size: 11px;
+  color: var(--muted);
+}
+.modal {
+  background: #064735;
+}
+.dish-detail-copy h2 {
+  color: var(--lime);
+}
+.dish-detail-copy > p {
+  color: var(--muted);
+  font-size: 14px;
+}
+.dish-detail-copy li,
+.allergen-note {
+  font-size: 13px;
+}
+.gallery-modal-caption h3 {
+  font-size: 17px;
+}
+.gallery-pagination {
+  font-size: 13px;
+}
+
+@media (max-width: 1000px) {
+  .desktop-nav a {
+    font-size: 12px;
+  }
+  .hero h1 {
+    font-size: clamp(57px, 7.6vw, 78px);
+  }
+  .hero-copy > p {
+    font-size: 16px;
+  }
+  .menu-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .story-copy > p {
+    font-size: 15px;
+  }
+  .dish-title-row h3 {
+    font-size: 18px;
+  }
+  .dish-price {
+    font-size: 16px;
+  }
+  .visit-details p {
+    font-size: 13px;
+  }
+}
+@media (max-width: 760px) {
+  .hero h1 {
+    font-size: clamp(56px, 9.6vw, 74px);
+    letter-spacing: -0.06em;
+  }
+  .hero-copy .eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+  .hero-actions {
+    gap: 18px;
+  }
+  .hero-actions > .text-link {
+    font-size: 13px;
+  }
+  .hero-bottom,
+  .hero-bottom a,
+  .hero-bottom > span {
+    font-size: 8px;
+  }
+  .hero-bottom a {
+    max-width: 57%;
+    letter-spacing: 0.8px;
+  }
+  .hero-caption {
+    font-size: 8px;
+  }
+  .hero-food-label small {
+    font-size: 10px;
+  }
+  .values-ribbon span {
+    font-size: 12px;
+  }
+  .section-heading > p {
+    font-size: 15px;
+  }
+  .category-filters button {
+    font-size: 12px;
+    padding-inline: 13px;
+  }
+  .dietary-filters button {
+    font-size: 12px;
+  }
+  .menu-bottom {
+    align-items: flex-start;
+  }
+  .menu-bottom > p {
+    font-size: 10px;
+  }
+  .botanical-art-hero {
+    width: 250px;
+    bottom: 100px;
+    left: -120px;
+    opacity: 0.12;
+  }
+  .reservation-copy > p {
+    font-size: 15px;
+  }
+  .reservation-copy .demo-caption {
+    font-size: 11px;
+  }
+  .footer-top > p {
+    font-size: 21px;
+  }
+  .footer-bottom {
+    font-size: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .brand > span {
+    font-size: 25px;
+  }
+  .brand-caption {
+    font-size: 6px;
+  }
+  .hero-copy > p {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .hero h1 {
+    margin-block: 24px;
+  }
+  .button {
+    font-size: 14px;
+  }
+  .hero-main {
+    padding-top: 123px;
+  }
+  .dish-title-row h3 {
+    font-size: 18px;
+  }
+  .dish-card > p {
+    font-size: 13px;
+  }
+  .form-heading h3 {
+    font-size: 25px;
+  }
+  .form-heading > p {
+    font-size: 13px;
+  }
+  .gallery-overlay {
+    font-size: 11px;
+  }
+}
+@media (max-width: 360px) {
+  .hero h1 {
+    font-size: 52px;
+  }
+  .brand > span {
+    font-size: 23px;
+  }
+  .hero-copy .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.1px;
+  }
+  .header-reserve {
+    font-size: 10px;
+  }
+}
+@media (max-width: 420px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -8,7 +8,7 @@ The supplied visual references moved the direction toward dark stone, oversized 
 
 ## The design
 
-A dark charcoal foundation gives the photographic ingredients the foreground. Warm cream text provides the main hierarchy; botanical lime connects the primary actions, vegetarian marker and italic editorial accents. Manrope supplies the clear contemporary type, with Cormorant Garamond italics adding warmth.
+A later art-direction refinement takes inspiration from [Kitchen Remedy](https://www.kitchen-remedy.com.au/): deep forest green, pale mint headings, copper details and simple outlined pill buttons. Wix Madefor Display supplies the rounded contemporary headlines, while Hanken Grotesk makes body copy easier to read. Original botanical line art adds a handmade detail, and warm paper surfaces soften the reservation form. The existing food photography and layered animations remain central to the experience.
 
 The page progresses from a signature plate to its preparation, then to menu exploration, the restaurant philosophy, atmosphere, a table request and practical visit information. Each section has a distinct purpose. No fabricated reviews, customer counts or promotional claims are needed.
 

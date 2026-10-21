@@ -1,20 +1,22 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-charcoal: #171a17;
-  --color-lime: #d7ed91;
-  --color-cream: #f5f0e8;
-  --font-sans: var(--font-manrope);
-  --font-editorial: var(--font-cormorant);
+  --color-charcoal: #024b34;
+  --color-lime: #cbe5d8;
+  --color-cream: #f4efe5;
+  --font-sans: var(--font-body);
+  --font-editorial: var(--font-display);
 }
 
 :root {
-  --bg: #171a17;
-  --surface: #1e221e;
-  --cream: #f5f0e8;
-  --lime: #d7ed91;
-  --muted: #afb2a7;
-  --line: #ffffff1a;
+  --bg: #024b34;
+  --surface: #0a5540;
+  --cream: #f4efe5;
+  --lime: #cbe5d8;
+  --muted: #bdcfc1;
+  --line: #cbe5d82e;
+  --copper: #dfb28b;
+  --paper: #efe9db;
   --header-height: 100px;
   color-scheme: dark;
 }
@@ -29,7 +31,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--cream);
-  font-family: var(--font-manrope), Arial, sans-serif;
+  font-family: var(--font-body), Arial, sans-serif;
   font-size: 14px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -99,7 +101,7 @@ h2 {
   letter-spacing: -2.6px;
 }
 h2 em {
-  font-family: var(--font-cormorant), Georgia, serif;
+  font-family: var(--font-display), Arial, sans-serif;
   font-weight: 400;
   font-size: 1.25em;
   letter-spacing: -1.5px;
@@ -274,7 +276,7 @@ svg {
   letter-spacing: -1.3px;
 }
 .brand-and {
-  font-family: var(--font-cormorant), Georgia, serif;
+  font-family: var(--font-display), Arial, sans-serif;
   font-size: 28px;
   font-weight: 400;
   color: var(--lime);
@@ -362,7 +364,7 @@ svg {
   margin-bottom: 28px;
 }
 .hero h1 em {
-  font-family: var(--font-cormorant), Georgia, serif;
+  font-family: var(--font-display), Arial, sans-serif;
   color: var(--lime);
   font-size: 1.2em;
   font-weight: 400;
@@ -1153,7 +1155,7 @@ svg {
   color: #c9d1bc;
 }
 .story-signature em {
-  font-family: var(--font-cormorant), Georgia, serif;
+  font-family: var(--font-display), Arial, sans-serif;
   font-size: 18px;
   color: var(--lime);
 }
@@ -1501,7 +1503,7 @@ svg {
   padding-block: 42px;
 }
 .footer-top > p {
-  font-family: var(--font-cormorant), Georgia, serif;
+  font-family: var(--font-display), Arial, sans-serif;
   font-size: 25px;
   font-style: italic;
   color: #c1cda6;

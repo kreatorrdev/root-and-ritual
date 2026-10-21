@@ -1,19 +1,19 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import "./ambience.css";
 
-const manrope = localFont({
-  src: "../../public/fonts/manrope-latin.woff2",
-  variable: "--font-manrope",
+const hanken = localFont({
+  src: "../../public/fonts/hanken-grotesk-latin.woff2",
+  variable: "--font-body",
   display: "swap",
-  weight: "200 800",
+  weight: "100 900",
 });
-const cormorant = localFont({
-  src: "../../public/fonts/cormorant-italic-latin.woff2",
-  variable: "--font-cormorant",
+const madefor = localFont({
+  src: "../../public/fonts/wix-madefor-display-latin.woff2",
+  variable: "--font-display",
   display: "swap",
-  weight: "300 700",
-  style: "italic",
+  weight: "400 800",
 });
 
 const siteUrl =
@@ -51,11 +51,11 @@ export const metadata: Metadata = {
   robots: { index: false, follow: true },
 };
 
-export const viewport: Viewport = { themeColor: "#171a17", width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { themeColor: "#024b34", width: "device-width", initialScale: 1 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${manrope.variable} ${cormorant.variable}`}>
+    <html lang="en" className={`${hanken.variable} ${madefor.variable}`}>
       <body>{children}</body>
     </html>
   );

@@ -20,8 +20,8 @@ Build a polished, mobile-first website for a **100% vegetarian restaurant** with
 | Brand         | Root & Ritual                                                                                          |
 | Tagline       | _Rooted in nature. Made with intention._                                                               |
 | Tone          | Fresh, inviting, natural, modern and editorial                                                         |
-| Colors        | Charcoal `#171A17`, warm cream `#F5F0E8`, botanical lime `#D7ED91`, muted forest surfaces              |
-| Typography    | Manrope with Cormorant Garamond italic accents, self-hosted through `next/font/local`                  |
+| Colors        | Forest green `#024B34`, mint `#CBE5D8`, cream `#F4EFE5`, copper `#DFB28B`                              |
+| Typography    | Wix Madefor Display headings with Hanken Grotesk body text, self-hosted through `next/font/local`      |
 | Photography   | Generated overhead vegetarian food photography and an illustrative café interior; see `docs/ASSETS.md` |
 | Primary CTA   | **Explore Our Menu**                                                                                   |
 | Secondary CTA | **A table for you**                                                                                    |
@@ -144,7 +144,7 @@ Real reservation delivery remains an optional future integration and is not requ
 - Location: Portland, Oregon, United States; an illustrative concept location.
 - Currency: USD.
 - Delivery: local development, Vercel publication and a private GitHub repository connected to the same Vercel project.
-- The final dark visual direction is recorded in `DESIGN_BRIEF.md`.
+- The final forest-green café direction is recorded in `DESIGN_BRIEF.md`.
 - Four restaurant website references informed the dark visual direction, layered food assembly, scroll-driven preparation and menu reveal.
 - Website copy and project documentation are in English.
 - Local implementation, generated assets, tests, screenshots, English documentation, GitHub publication and Vercel integration are complete. R13 remains in explicit demo mode.

@@ -8,16 +8,16 @@ Root & Ritual is a fictional vegetarian restaurant and café in Portland, Oregon
 
 ## Visual direction
 
-The design pairs dark charcoal stone with warm cream typography and botanical lime accents. Colorful overhead food photography forms the main visual focus, with generous spacing and a calm editorial tone.
+The design takes inspiration from [Kitchen Remedy](https://www.kitchen-remedy.com.au/), pairing deep forest green with pale mint typography, warm paper surfaces and copper details. Original botanical line art and outlined pill buttons create a more relaxed café atmosphere. Colorful overhead food photography remains the main visual focus.
 
 | Element            | Specification                                                             |
 | ------------------ | ------------------------------------------------------------------------- |
-| Primary background | Charcoal `#171A17` with a subtle stone texture                            |
-| Main text          | Warm cream `#F5F0E8`                                                      |
-| Accent             | Botanical lime `#D7ED91`                                                  |
+| Primary background | Deep forest green `#024B34`                                               |
+| Main text          | Warm cream `#F4EFE5`                                                      |
+| Accent             | Pale mint `#CBE5D8` and copper `#DFB28B`                                  |
 | Secondary surfaces | Muted forest tones                                                        |
-| Main typeface      | Manrope, self-hosted through `next/font/local`                            |
-| Editorial accents  | Cormorant Garamond italic                                                 |
+| Main typeface      | Wix Madefor Display, self-hosted through `next/font/local`                |
+| Editorial accents  | Hanken Grotesk for body copy and labels                                   |
 | Photography        | Overhead vegetarian dishes, ingredients and an illustrative café interior |
 | Primary action     | Explore our menu                                                          |
 | Secondary action   | A table for you                                                           |

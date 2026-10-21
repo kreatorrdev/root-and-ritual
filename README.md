@@ -10,7 +10,7 @@ A fictional vegetarian restaurant and café in Portland, Oregon. A portfolio web
 
 Published to Vercel on October 19, 2026. All venue details, dishes, prices, opening hours and photographs are illustrative. The reservation form is a non-submitting demo.
 
-![Root & Ritual live website](docs/screenshots/vercel-live.png)
+![Root & Ritual website](docs/screenshots/forest-desktop.png)
 
 ## Run locally
 
@@ -25,13 +25,13 @@ Open http://127.0.0.1:3000 in your browser. On Windows, use `npm.cmd` if PowerSh
 
 ## The experience
 
-- Dark charcoal stone texture, soft cream typography and botanical lime accents, informed by the supplied visual references.
+- Deep forest green, pale mint typography, copper accents, warm paper surfaces and botanical line art, informed by the Kitchen Remedy reference.
 - An empty ceramic plate fills with individually animated photographic ingredients. The replay button starts the sequence again; pointer movement adds subtle depth on desktop.
 - Native scrolling controls a four-part sequence: gather, prepare, roast and plate. Damped progress and staggered ingredient motion soften the transitions. Relative positions keep the food inside the visual, and fixed step descriptions prevent layout jumps.
 - Menu headings and cards reveal on entry into the viewport. Category and dietary filters combine, with a clear empty state.
 - Twelve typed menu entries, consistent vegetarian/vegan/gluten-free tags, USD prices and ingredient/allergen dialogs.
 - Accessible native dialogs, keyboard-operable gallery, responsive navigation and support for `prefers-reduced-motion`.
-- Local fonts and optimized Next.js images. Metadata and social preview information are included.
+- Self-hosted Wix Madefor Display headings and Hanken Grotesk body text, with optimized Next.js images. Metadata and social preview information are included.
 - React Hook Form and Zod validate name, email, dates, service hours, guest counts and a spam honeypot on both client and server.
 
 ## Reservation behavior
