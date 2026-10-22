@@ -25,7 +25,7 @@ Open http://127.0.0.1:3000 in your browser. On Windows, use `npm.cmd` if PowerSh
 
 ## The experience
 
-- Deep forest green, pale mint typography, copper accents, warm paper surfaces and botanical line art, informed by the Kitchen Remedy reference.
+- Deep forest green with charcoal menu, divider and footer surfaces, pale mint typography, copper accents, warm paper surfaces and botanical line art, informed by the Kitchen Remedy reference.
 - An empty ceramic plate fills with individually animated photographic ingredients. The replay button starts the sequence again; pointer movement adds subtle depth on desktop.
 - Native scrolling controls a four-part sequence: gather, prepare, roast and plate. Damped progress and staggered ingredient motion soften the transitions. Relative positions keep the food inside the visual, and fixed step descriptions prevent layout jumps.
 - Menu headings and cards reveal on entry into the viewport. Category and dietary filters combine, with a clear empty state.

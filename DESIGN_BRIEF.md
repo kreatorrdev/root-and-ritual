@@ -8,7 +8,7 @@ Root & Ritual is a fictional vegetarian restaurant and café in Portland, Oregon
 
 ## Visual direction
 
-The design takes inspiration from [Kitchen Remedy](https://www.kitchen-remedy.com.au/), pairing deep forest green with pale mint typography, warm paper surfaces and copper details. Original botanical line art and outlined pill buttons create a more relaxed café atmosphere. Colorful overhead food photography remains the main visual focus.
+The design takes inspiration from [Kitchen Remedy](https://www.kitchen-remedy.com.au/), pairing deep forest green with pale mint typography, warm paper surfaces and copper details. Charcoal black anchors the divider ribbon, menu, scrolled navigation and footer. Original botanical line art and outlined pill buttons create a more relaxed café atmosphere. Colorful overhead food photography remains the main visual focus.
 
 | Element            | Specification                                                             |
 | ------------------ | ------------------------------------------------------------------------- |

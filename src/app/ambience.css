@@ -41,10 +41,10 @@ h2 em,
   background: radial-gradient(ellipse, #75aa8330, transparent 67%);
 }
 .site-header.is-scrolled {
-  background: #024b34f2;
+  background: #101512f2;
 }
 .mobile-nav {
-  background: var(--bg);
+  background: var(--charcoal);
   color: var(--lime);
 }
 .brand > span {
@@ -159,8 +159,8 @@ h2 em,
   font-size: 8px !important;
 }
 .values-ribbon {
-  background: var(--paper);
-  color: var(--bg);
+  background: var(--charcoal);
+  color: var(--lime);
   border-block: 1px solid #cbe5d82e;
 }
 .values-ribbon span {
@@ -168,7 +168,10 @@ h2 em,
   font-weight: 500;
 }
 .values-ribbon svg {
-  color: #91603c;
+  color: var(--copper);
+}
+.menu-section {
+  background: var(--charcoal);
 }
 .botanical-art {
   position: absolute;
@@ -412,7 +415,7 @@ h2 em,
   color: var(--copper);
 }
 .site-footer {
-  background: #033f2e;
+  background: var(--charcoal);
 }
 .footer-top > p {
   font-size: 24px;
