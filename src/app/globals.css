@@ -458,8 +458,12 @@ svg {
   object-fit: fill;
 }
 .food-art-hero .ingredient-piece {
-  animation: ingredient-drop 1.3s cubic-bezier(0.21, 0.76, 0.27, 1) both;
+  animation: ingredient-drop 1.1s cubic-bezier(0.21, 0.76, 0.27, 1) both;
   animation-delay: var(--drop-delay);
+}
+/* Held on the first keyframe (invisible) until the ingredient atlas has decoded. */
+.food-art-hero:not([data-ready]) .ingredient-piece {
+  animation-play-state: paused;
 }
 @keyframes ingredient-drop {
   0% {
@@ -950,11 +954,22 @@ svg {
   transition: scale 0.6s cubic-bezier(0.2, 0.7, 0.3, 1);
   transform-origin: var(--photo-origin, 50% 50%);
 }
-.dish-card:hover .dish-card-image {
+.dish-card:hover .dish-card-image,
+.dish-card:focus-visible .dish-card-image {
   box-shadow: 0 0 0 1px #d7ed9144;
 }
-.dish-card:hover .dish-title-row h3 {
+.dish-card:hover .dish-title-row h3,
+.dish-card:focus-visible .dish-title-row h3 {
   color: var(--lime);
+}
+/* Menu filtering uses view transitions: cards glide to their new slot. */
+::view-transition-group(*) {
+  animation-duration: 0.38s;
+  animation-timing-function: cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.2s;
 }
 .dish-open {
   position: absolute;
@@ -971,7 +986,8 @@ svg {
     background 0.2s,
     rotate 0.3s;
 }
-.dish-card:hover .dish-open {
+.dish-card:hover .dish-open,
+.dish-card:focus-visible .dish-open {
   background: var(--lime);
   rotate: 45deg;
 }
@@ -1193,7 +1209,9 @@ svg {
     filter 0.6s;
   filter: brightness(0.85);
 }
-.gallery-button:hover > img {
+.gallery-button:hover > img,
+.gallery-button:focus-visible > img,
+.gallery-button:active > img {
   transform: scale(1.05);
   filter: brightness(1);
 }
@@ -1556,6 +1574,24 @@ svg {
 .modal::backdrop {
   background: #050a06cd;
   backdrop-filter: blur(8px);
+}
+/* A short rise-in so the dialog reads as coming from the page, not replacing it. */
+.modal[open] {
+  animation: modal-in 0.3s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+.modal[open]::backdrop {
+  animation: backdrop-in 0.3s ease-out;
+}
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+}
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
 }
 .modal-content {
   position: relative;
@@ -2886,11 +2922,14 @@ svg {
   html {
     scroll-behavior: auto;
   }
+  /* No movement, but keep brief fades so hover, focus and state changes still give feedback. */
   *,
   *::before,
   *::after {
     animation: none !important;
-    transition: none !important;
+    transition-property: color, background-color, border-color, opacity !important;
+    transition-duration: 0.15s !important;
+    transition-delay: 0s !important;
     scroll-behavior: auto !important;
   }
   .food-art-hero .ingredient-piece {

@@ -13,6 +13,10 @@ export const ingredients = [
   { id: "basil", cell: 8, x: 66, y: 28, size: 19, angle: 30, fromX: 200, fromY: -400 },
 ];
 
+// One pre-compressed WebP shared by every sprite. Served as-is so the browser downloads a
+// single file; letting next/image pick per-sprite widths fetched the atlas several times.
+export const ATLAS_SRC = "/images/ingredients-atlas.webp";
+
 export function Sprite({
   cell,
   className = "",
@@ -25,13 +29,13 @@ export function Sprite({
   return (
     <span className={`ingredient-sprite ${className}`} aria-hidden="true">
       <Image
-        src="/images/ingredients-atlas.png"
+        src={ATLAS_SRC}
         alt=""
         width={1254}
         height={1254}
+        unoptimized
         loading={priority ? "eager" : "lazy"}
         fetchPriority={priority ? "high" : "auto"}
-        sizes="(max-width: 700px) 750px, 1080px"
         className="ingredient-sheet"
         style={{ left: `${-(cell % 3) * 100}%`, top: `${-Math.floor(cell / 3) * 100}%` }}
       />
@@ -42,14 +46,18 @@ export function Sprite({
 export function FoodArt({
   mode = "hero",
   replay = 0,
+  ready = true,
 }: {
   mode?: "hero" | "scroll";
   replay?: number;
+  /** Hero only: the drop animation waits (paused) until the ingredient atlas is decoded. */
+  ready?: boolean;
 }) {
   return (
     <div
       className={`food-art food-art-${mode}`}
       key={replay}
+      data-ready={ready || undefined}
       role="img"
       aria-label={
         mode === "hero"
@@ -81,7 +89,7 @@ export function FoodArt({
               "--ingredient-angle": `${ingredient.angle}deg`,
               "--drop-x": `${ingredient.fromX}px`,
               "--drop-y": `${ingredient.fromY}px`,
-              "--drop-delay": `${650 + i * 155}ms`,
+              "--drop-delay": `${150 + i * 85}ms`,
             } as CSSProperties
           }
         >
