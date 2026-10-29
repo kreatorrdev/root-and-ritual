@@ -6,15 +6,20 @@ export function Reveal({
   children,
   className = "",
   delay = 0,
+  instant = false,
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
+  /** Skip the entrance; for content that appears in response to the visitor's own action. */
+  instant?: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
+  // Read once on mount: content already on screen should never re-run its entrance.
+  const skip = useRef(instant);
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || skip.current) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     el.dataset.motion = "ready";
     const observer = new IntersectionObserver(

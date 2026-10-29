@@ -2,17 +2,38 @@
 
 import { ArrowDown, ArrowUpRight, Check, Leaf, SlidersHorizontal, WheatOff } from "lucide-react";
 import { useState } from "react";
+import { flushSync } from "react-dom";
 import { categories, dietaryFilters, filterMenu, formatPrice, menu } from "@/data/menu";
 import type { Category, Dietary, Dish } from "@/types/menu";
 import { DishPhoto } from "./dish-photo";
 import { Modal } from "./modal";
 import { Reveal } from "./reveal";
 
+// Filtering morphs the grid instead of rebuilding it: cards that stay slide to their new
+// place, the rest fade. Falls back to an instant update where unsupported or motion is reduced.
+function morph(update: () => void) {
+  if (
+    typeof document.startViewTransition !== "function" ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    update();
+    return;
+  }
+  document.startViewTransition(() => flushSync(update));
+}
+
 export function MenuSection() {
   const [category, setCategory] = useState<Category>("All");
   const [dietary, setDietary] = useState<Dietary>("All vegetarian");
   const [expanded, setExpanded] = useState(false);
   const [selected, setSelected] = useState<Dish | null>(null);
+  // After the first filter or expand, newly shown cards appear without a scroll entrance.
+  const [interacted, setInteracted] = useState(false);
+  const change = (update: () => void) =>
+    morph(() => {
+      update();
+      setInteracted(true);
+    });
   const filtered = filterMenu(menu, category, dietary);
   const visible =
     expanded || category !== "All" || dietary !== "All vegetarian"
@@ -47,10 +68,12 @@ export function MenuSection() {
                   type="button"
                   className={category === item ? "active" : ""}
                   aria-pressed={category === item}
-                  onClick={() => {
-                    setCategory(item);
-                    setExpanded(true);
-                  }}
+                  onClick={() =>
+                    change(() => {
+                      setCategory(item);
+                      setExpanded(true);
+                    })
+                  }
                 >
                   {item}
                 </button>
@@ -64,10 +87,12 @@ export function MenuSection() {
                   key={item}
                   aria-pressed={dietary === item}
                   className={dietary === item ? "active" : ""}
-                  onClick={() => {
-                    setDietary(item);
-                    setExpanded(true);
-                  }}
+                  onClick={() =>
+                    change(() => {
+                      setDietary(item);
+                      setExpanded(true);
+                    })
+                  }
                 >
                   {item === "All vegetarian" ? "All" : item}
                 </button>
@@ -78,12 +103,13 @@ export function MenuSection() {
         <p className="menu-result sr-only" aria-live="polite">
           Showing {visible.length} of {filtered.length} dishes. {category}. {dietary}.
         </p>
-        <div className="menu-grid" key={`${category}-${dietary}-${expanded}`}>
+        <div className="menu-grid">
           {visible.map((dish, i) => (
-            <Reveal key={dish.id} delay={Math.min((i % 3) * 95, 190)}>
+            <Reveal key={dish.id} delay={Math.min((i % 3) * 95, 190)} instant={interacted}>
               <button
                 type="button"
                 className="dish-card"
+                style={{ viewTransitionName: `dish-${dish.id}` }}
                 onClick={() => setSelected(dish)}
                 aria-label={`View ${dish.name}, ${formatPrice(dish.price)}, ingredients and allergens`}
               >
@@ -128,10 +154,12 @@ export function MenuSection() {
             <button
               className="button button-outline"
               type="button"
-              onClick={() => {
-                setCategory("All");
-                setDietary("All vegetarian");
-              }}
+              onClick={() =>
+                change(() => {
+                  setCategory("All");
+                  setDietary("All vegetarian");
+                })
+              }
             >
               Explore all dishes
             </button>
@@ -143,7 +171,7 @@ export function MenuSection() {
               <button
                 className="button button-outline"
                 type="button"
-                onClick={() => setExpanded(!expanded)}
+                onClick={() => change(() => setExpanded(!expanded))}
               >
                 {expanded ? "A little less" : "The whole good menu"}
                 <ArrowDown size={16} className={expanded ? "rotate-180" : ""} aria-hidden="true" />

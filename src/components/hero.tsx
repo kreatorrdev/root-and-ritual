@@ -1,13 +1,32 @@
 "use client";
 
 import { ArrowDown, ArrowUpRight, MoveDown, RotateCcw } from "lucide-react";
-import { useRef, useState, type CSSProperties } from "react";
-import { FoodArt, Sprite } from "./food-art";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { ATLAS_SRC, FoodArt, Sprite } from "./food-art";
 import { BotanicalArt } from "./botanical-art";
 
 export function Hero() {
   const [replay, setReplay] = useState(0);
+  const [ready, setReady] = useState(false);
   const visual = useRef<HTMLDivElement>(null);
+  // Start the plate assembly only once the ingredients can actually be drawn, so visitors
+  // never watch an empty plate while the atlas downloads. A timeout keeps it from waiting forever.
+  useEffect(() => {
+    let settled = false;
+    const start = () => {
+      if (settled) return;
+      settled = true;
+      setReady(true);
+    };
+    const atlas = new window.Image();
+    atlas.src = ATLAS_SRC;
+    atlas.decode().then(start, start);
+    const fallback = window.setTimeout(start, 2500);
+    return () => {
+      settled = true;
+      window.clearTimeout(fallback);
+    };
+  }, []);
   return (
     <section id="home" className="hero stone-surface">
       <div className="hero-glow" />
@@ -69,7 +88,10 @@ export function Hero() {
           }}
         >
           <div className="hero-food">
-            <FoodArt replay={replay} />
+            <FoodArt replay={replay} ready={ready} />
+            <noscript>
+              <style>{".food-art-hero .ingredient-piece{animation-play-state:running!important}"}</style>
+            </noscript>
           </div>
           <div className="vegetarian-seal">
             <span>GOOD BY NATURE</span>

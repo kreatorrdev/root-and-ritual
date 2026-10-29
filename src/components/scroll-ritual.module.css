@@ -36,24 +36,44 @@
   margin: 22px 0 18px;
 }
 .step {
+  border-bottom: 1px solid var(--line);
+}
+/* Each step is a button that scrolls the scene to that moment. */
+.stepButton {
   display: flex;
   align-items: center;
   gap: 16px;
+  width: 100%;
   padding: 7px 0;
-  border-bottom: 1px solid var(--line);
+  border: 0;
+  background: transparent;
+  text-align: left;
   color: var(--muted);
   transition: color 400ms ease;
+}
+.stepButton:hover {
+  color: var(--cream);
+}
+.stepButton:focus-visible {
+  outline-offset: 2px;
 }
 .number {
   color: var(--copper);
   font-size: 9px;
 }
-.step h3 {
+.stepCopy {
+  display: block;
+  min-width: 0;
+}
+.stepName {
+  display: block;
+  font-family: var(--font-display), Arial, sans-serif;
   font-size: 15px;
   line-height: 1.3;
   font-weight: 550;
 }
-.step p {
+.stepText {
+  display: block;
   font-size: 11px;
   line-height: 1.5;
   color: var(--muted);
@@ -63,12 +83,32 @@
     opacity 400ms ease,
     transform 400ms ease;
 }
-.step[aria-current="step"] {
+.stepButton[aria-current="step"] {
   color: var(--lime);
 }
-.step[aria-current="step"] p {
+.stepButton[aria-current="step"] .stepText {
   opacity: 1;
   transform: translateY(0);
+}
+.hints {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.skip {
+  flex: none;
+  font-size: 9px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-color: #ffffff33;
+  text-underline-offset: 4px;
+  transition: color 200ms ease;
+}
+.skip:hover {
+  color: var(--lime);
 }
 .invitation {
   display: flex;
@@ -100,7 +140,7 @@
   will-change: transform, opacity;
 }
 .canvas :global(.ingredient-piece) {
-  will-change: transform, left, top;
+  will-change: transform;
 }
 .board {
   position: absolute;
@@ -141,6 +181,7 @@
   width: 3.3%;
   height: 27%;
   opacity: 0;
+  will-change: transform, opacity;
   z-index: 6;
   filter: drop-shadow(3px 5px 3px #0006);
   transform-origin: 50% 65%;
@@ -212,10 +253,10 @@
   .intro {
     font-size: 11px;
   }
-  .step {
+  .stepButton {
     gap: 12px;
   }
-  .step p {
+  .stepText {
     font-size: 9px;
   }
   .invitation {
@@ -253,6 +294,12 @@
   .invitation {
     display: none;
   }
+  .hints {
+    justify-content: flex-end;
+  }
+  .skip {
+    font-size: 8px;
+  }
   .steps {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -260,25 +307,27 @@
     margin-block: 15px 3px;
   }
   .step {
+    border-bottom: 0;
+    border-top: 1px solid var(--line);
+  }
+  .stepButton {
     flex-direction: column;
     align-items: start;
     gap: 3px;
     padding-block: 7px;
-    border-bottom: 0;
-    border-top: 1px solid var(--line);
   }
-  .step h3 {
+  .stepName {
     font-size: 10px;
     white-space: nowrap;
   }
-  .step p {
+  .stepText {
     display: none;
   }
   .number {
     font-size: 7px;
   }
   .scene {
-    width: min(100%, calc(100svh - 325px), 430px);
+    width: min(100%, calc(100svh - 360px), 430px);
     margin-inline: auto;
   }
   .captions {
@@ -300,7 +349,7 @@
   .steps {
     gap: 7px;
   }
-  .step h3 {
+  .stepName {
     font-size: 9px;
   }
 }
@@ -319,13 +368,13 @@
   .steps {
     margin-block: 15px;
   }
-  .step {
+  .stepButton {
     padding-block: 6px;
   }
-  .step h3 {
+  .stepName {
     font-size: 12px;
   }
-  .step p {
+  .stepText {
     font-size: 9px;
   }
 }
@@ -344,17 +393,25 @@
     width: 100%;
     max-width: 430px;
   }
-  .step p {
+  .stepText {
     opacity: 1;
     transform: none;
   }
   .progress,
-  .invitation {
+  .hints {
     display: none;
   }
   .canvas :global(.ingredient-piece),
   .canvas :global(.empty-plate),
   .board {
     will-change: auto;
+  }
+}
+@media (pointer: coarse) {
+  .stepButton {
+    min-height: 44px;
+  }
+  .skip {
+    padding-block: 8px;
   }
 }
