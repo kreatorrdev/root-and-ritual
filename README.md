@@ -1,10 +1,13 @@
 # Root & Ritual
 
+> Source documentation review — 1 November 2026: the source repository is public. Earlier dated references to private source access describe the previous repository setting. Hosted access, private user data and historical verification retain their documented scope.
+
+
 A fictional vegetarian restaurant and café in Portland, Oregon. A portfolio website with a layered food animation, a scroll-driven preparation sequence and an interactive seasonal menu.
 
 **Live site:** https://root-and-ritual-sooty.vercel.app
 
-**Source repository:** https://github.com/kreatorrdev/root-and-ritual (private)
+**Source repository:** https://github.com/kreatorrdev/root-and-ritual (public)
 
 **Local preview:** http://127.0.0.1:3000
 
@@ -101,3 +104,9 @@ Use the Next.js preset and keep `RESERVATION_FORM_ENDPOINT` unset for the portfo
 The first production deployment returned `READY`. Anonymous requests to the page and optimized image returned HTTP 200, a valid sample reservation returned HTTP 200 with explicit `demo` status, and the temporary review helper returned HTTP 404. Browser review confirmed the vegan filter, complete images and the production domain in Open Graph metadata.
 
 The repository contains the application, generated assets, English documentation and portfolio screenshots. Local environment files, Vercel credentials, dependencies, temporary files and build output are excluded. No paid plan, custom domain or form-delivery destination has been created.
+
+## Maintaining this project
+
+See the [contribution guide](CONTRIBUTING.md) for setup, relevant checks, documentation and configuration rules.
+
+Browse the [documentation index](docs/README.md) for current guides and historical records.
